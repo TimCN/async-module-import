@@ -1,6 +1,6 @@
 {
   "name": "@async-module/import",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "async import for webpack es module",
   "main": "lib/index.js",
   "scripts": {

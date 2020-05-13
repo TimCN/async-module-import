@@ -38,17 +38,9 @@ function getModuleUlr(moduleId: string): string {
   return window.webpackModuleFiles[moduleId]
 }
 
-export function asyncImport (rawModuleId: string): Promise<any> {
+export function asyncImport(moduleId: string): Promise<any> {
   return new Promise(function (resolve, reject) {
     // step1: 确认全局module中是否存在moduleId
-    let moduleId = rawModuleId
-    if (!/^\.\//.test(moduleId)) {
-      moduleId = './' + moduleId
-    }
-    if (!/\.js(x)$/.test(moduleId)) {
-      moduleId += ".js"
-    }
-
     if (!__webpack_require__.m.hasOwnProperty(moduleId)) {
       const moduleUrl = getModuleUlr(moduleId);
       // loadModule 会自动载入至全局module中
@@ -56,7 +48,7 @@ export function asyncImport (rawModuleId: string): Promise<any> {
         if (status) {
           resolve(__webpack_require__(moduleId))
         } else {
-          reject("async import module: " + rawModuleId + " failed")
+          reject("async import module: " + moduleId + " failed")
         }
       })
     } else {
