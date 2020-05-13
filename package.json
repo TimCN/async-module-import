@@ -1,0 +1,20 @@
+{
+  "name": "@async-module/import",
+  "version": "0.0.3",
+  "description": "async import for webpack es module",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": "git+https://github.com/TimCN/async-module-import.git",
+  "keywords": [],
+  "author": "tim.shanghai@outlook.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TimCN/async-module-import/issues"
+  },
+  "homepage": "https://github.com/TimCN/async-module-import#readme",
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  }
+}
